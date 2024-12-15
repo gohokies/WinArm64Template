@@ -2,10 +2,11 @@ cmake_minimum_required(VERSION 3.23.0)
 
 project(StarterTemplate VERSION 0.1.0 LANGUAGES C CXX)
 
+include(cmake/arm64x.cmake)
+
 add_executable(StarterTemplate src/main.cpp)
 if(DEFINED BUILD_AS_ARM64X)
-    set(ARM64X_TARGETS StarterTemplate)
-    include("cmake/arm64x.cmake")
+    UpdateTargetForArm64X(StarterTemplate)
 endif()
 
 include(CTest)
