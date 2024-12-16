@@ -1,94 +1,12 @@
 {
     "version": 8,
     "cmakeMinimumRequired": {
-      "major": 3,
-      "minor": 23,
-      "patch": 0
+        "major": 3,
+        "minor": 23,
+        "patch": 0
     },
-    "configurePresets": [
-        {
-            "name": "Windows-VS2022",
-            "displayName": "Windows VS2022",
-            "description": "Using Visual Studio 17 2022 to config/build project",
-            "hidden": true,
-            "generator": "Visual Studio 17 2022",
-            "binaryDir": "${sourceDir}/out/build/${presetName}",
-            "cacheVariables": {
-                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
-                "CMAKE_C_COMPILER": "cl.exe",
-                "CMAKE_CXX_COMPILER": "cl.exe"
-            }
-        },
-        {
-            "name": "Windows-Arm64",
-            "displayName": "Windows VS2022 Arm64",
-            "description": "Using Visual Studio 17 2022, target Arm64 architecture",
-            "inherits": "Windows-VS2022",
-            "architecture": "arm64"
-        },
-        {
-            "name": "Windows-Arm64X-Arm64",
-            "displayName": "Windows VS2022 Arm64X - Arm64",
-            "description": "Using Visual Studio 17 2022, target Arm64X",
-            "inherits": "Windows-Arm64",
-            "cacheVariables": {
-                "BUILD_AS_ARM64X": "ARM64"
-            }            
-        },
-        {
-            "name": "Windows-Arm64EC",
-            "displayName": "Windows VS2022 Arm64EC",
-            "description": "Using Visual Studio 17 2022, target Arm64EC architecture",
-            "inherits": "Windows-VS2022",
-            "architecture": "arm64ec"
-        },
-        {
-            "name": "Windows-Arm64X-Arm64EC",
-            "displayName": "Windows VS2022 Arm64X - Arm64EC",
-            "description": "Using Visual Studio 17 2022, target Arm64X",
-            "inherits": "Windows-Arm64EC",
-            "cacheVariables": {
-                "BUILD_AS_ARM64X": "ARM64EC"
-            }            
-        },
-        {
-            "name": "Windows-X64",
-            "displayName": "Windows VS2022 X64",
-            "description": "Using Visual Studio 17 2022, target X64 architecture",
-            "inherits": "Windows-VS2022",
-            "architecture": "x64"
-        }
-    ],
-    "buildPresets": [
-        {
-            "name": "Windows-Arm64-debug",
-            "displayName": "Build with VS2022 - Arm64 - Debug",
-            "configurePreset": "Windows-Arm64",
-            "configuration": "Debug"
-        },
-        {
-            "name": "Windows-Arm64X-Arm64-debug",
-            "displayName": "Build with VS2022 - Arm64X - Arm64  - Debug",
-            "configurePreset": "Windows-Arm64X-Arm64",
-            "configuration": "Debug"
-        },
-        {
-            "name": "Windows-Arm64EC-debug",
-            "displayName": "Build with VS2022 - Arm64EC - Debug",
-            "configurePreset": "Windows-Arm64EC",
-            "configuration": "Debug"
-        },
-        {
-            "name": "Windows-Arm64X-Arm64EC-debug",
-            "displayName": "Build with VS2022 - Arm64X - Arm64EC - Debug",
-            "configurePreset": "Windows-Arm64X-Arm64EC",
-            "configuration": "Debug"
-        },
-        {
-            "name": "Windows-X64-debug",
-            "displayName": "Build with VS2022 - X64 - Debug",
-            "configurePreset": "Windows-X64",
-            "configuration": "Debug"
-        }
+    "include": [
+        "Preset-VS2022-MSVC.json",
+        "Preset-VS2022-Clang.json"
     ]
 }

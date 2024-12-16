@@ -1,0 +1,124 @@
+{
+    "version": 8,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "Win-VS2022-MSVC",
+            "displayName": "Windows VS2022",
+            "description": "Using VS2022 to config/build project",
+            "hidden": true,
+            "generator": "Visual Studio 17 2022",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_CXX_COMPILER": "cl.exe"
+            }
+        },
+        {
+            "name": "Win-VS2022-MSVC-X64",
+            "displayName": "Windows VS2022 MSVC X64",
+            "description": "Using VS2022, targeting X64 architecture",
+            "inherits": "Win-VS2022-MSVC",
+            "architecture": "x64"
+        },
+        {
+            "name": "Win-VS2022-MSVC-Arm64",
+            "displayName": "Windows VS2022 MSVC Arm64",
+            "description": "Using VS2022, targeting Arm64 architecture",
+            "inherits": "Win-VS2022-MSVC",
+            "architecture": "arm64"
+        },
+        {
+            "name": "Win-VS2022-MSVC-Arm64EC",
+            "displayName": "Windows VS2022 MSVC Arm64EC",
+            "description": "Using VS2022 MSVC, targeting Arm64EC architecture",
+            "inherits": "Win-VS2022-MSVC",
+            "architecture": "arm64ec"
+        },
+        {
+            "name": "Win-VS2022-MSVC-Arm64X-Arm64",
+            "displayName": "Windows VS2022 Arm64X - Arm64",
+            "description": "Using VS2022 MSVC, targeting Arm64X",
+            "inherits": "Win-VS2022-MSVC-Arm64",
+            "cacheVariables": {
+                "BUILD_AS_ARM64X": "ARM64"
+            }
+        },
+        {
+            "name": "Win-VS2022-MSVC-Arm64X-Arm64EC",
+            "displayName": "Windows VS2022 Arm64X - Arm64EC",
+            "description": "Using VS2022 MSVC, targeting Arm64X",
+            "inherits": "Win-VS2022-MSVC-Arm64EC",
+            "cacheVariables": {
+                "BUILD_AS_ARM64X": "ARM64EC"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "Win-VS2022-MSVCX64-X64-Debug",
+            "displayName": "Build with VS2022 MSVC - X64 - Debug",
+            "configurePreset": "Win-VS2022-MSVC-X64",
+            "configuration": "Debug"
+        },
+        {
+            "name": "Win-VS2022-MSVCX64-X64-Release",
+            "displayName": "Build with VS2022 MSVC - X64 - Release",
+            "configurePreset": "Win-VS2022-MSVC-X64",
+            "configuration": "Release"
+        },
+        {
+            "name": "Win-VS2022-MSVC-Arm64-Debug",
+            "displayName": "Build with VS2022 MSVC - Arm64 - Debug",
+            "configurePreset": "Win-VS2022-MSVC-Arm64",
+            "configuration": "Debug"
+        },
+        {
+            "name": "Win-VS2022-MSVC-Arm64-Release",
+            "displayName": "Build with VS2022 MSVC - Arm64 - Release",
+            "configurePreset": "Win-VS2022-MSVC-Arm64",
+            "configuration": "Release"
+        },
+        {
+            "name": "Win-VS2022-MSVC-Arm64EC-Debug",
+            "displayName": "Build with VS2022 MSVC - Arm64EC - Debug",
+            "configurePreset": "Win-VS2022-MSVC-Arm64EC",
+            "configuration": "Debug"
+        },
+        {
+            "name": "Win-VS2022-MSVC-Arm64EC-Release",
+            "displayName": "Build with VS2022 MSVC - Arm64EC - Release",
+            "configurePreset": "Win-VS2022-MSVC-Arm64EC",
+            "configuration": "Release"
+        },
+        {
+            "name": "Win-VS2022-MSVC-Arm64X-Arm64-Debug",
+            "displayName": "Build with VS2022 MSVC - Arm64X - Arm64  - Debug",
+            "configurePreset": "Win-VS2022-MSVC-Arm64X-Arm64",
+            "configuration": "Debug"
+        },
+        {
+            "name": "Win-VS2022-MSVC-Arm64X-Arm64-Release",
+            "displayName": "Build with VS2022 MSVC - Arm64X - Arm64  - Release",
+            "configurePreset": "Win-VS2022-MSVC-Arm64X-Arm64",
+            "configuration": "Release"
+        },
+        {
+            "name": "Win-VS2022-MSVC-Arm64X-Arm64EC-Debug",
+            "displayName": "Build with VS2022 MSVC - Arm64X - Arm64EC - Debug",
+            "configurePreset": "Win-VS2022-MSVC-Arm64X-Arm64EC",
+            "configuration": "Debug"
+        },
+        {
+            "name": "Win-VS2022-MSVC-Arm64X-Arm64EC-Release",
+            "displayName": "Build with VS2022 MSVC - Arm64X - Arm64EC - Release",
+            "configurePreset": "Win-VS2022-MSVC-Arm64X-Arm64EC",
+            "configuration": "Release"
+        }
+    ]
+}

@@ -1,0 +1,64 @@
+{
+    "version": 8,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "Win-VS2022-Clang",
+            "displayName": "Clang with VS2022",
+            "description": "Using Clang to build project",
+            "generator": "Visual Studio 17 2022",
+            "toolset": "ClangCL",
+            "hidden": true,
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "clang-cl.exe",
+                "CMAKE_CXX_COMPILER": "clang-cl.exe"
+            }
+        },
+        {
+            "name": "Win-VS2022-Clang-X64",
+            "displayName": "Clang with VS2022 X64",
+            "description": "Using Clang with VS2022 to build X64",
+            "inherits": "Win-VS2022-Clang",
+            "architecture": "x64"
+        },
+        {
+            "name": "Win-VS2022-Clang-Arm64",
+            "displayName": "Clang with VS2022 Arm64",
+            "description": "Using Clang with VS2022 to build Arm64",
+            "inherits": "Win-VS2022-Clang",
+            "architecture": "arm64"
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "Win-VS2022-Clang-X64-Debug",
+            "displayName": "Clang with VS2022 - X64 - Debug",
+            "configurePreset": "Win-VS2022-Clang-X64",
+            "configuration": "Debug"
+        },
+        {
+            "name": "Win-VS2022-Clang-X64-Release",
+            "displayName": "Clang with VS2022 - X64 - Release",
+            "configurePreset": "Win-VS2022-Clang-X64",
+            "configuration": "Release"
+        },
+        {
+            "name": "Win-VS2022-Clang-Arm64-debug",
+            "displayName": "Clang with VS2022 - Arm64 - Debug",
+            "configurePreset": "Win-VS2022-Clang-Arm64",
+            "configuration": "Debug"
+        },
+        {
+            "name": "Win-VS2022-Clang-Arm64-Release",
+            "displayName": "Clang with VS2022 - Arm64 - Release",
+            "configurePreset": "Win-VS2022-Clang-Arm64",
+            "configuration": "Release"
+        }
+    ]
+}
