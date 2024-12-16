@@ -1,5 +1,5 @@
 {
-    "version": 8,
+    "version": 4,
     "cmakeMinimumRequired": {
         "major": 3,
         "minor": 23,
@@ -49,7 +49,7 @@
             "configuration": "Release"
         },
         {
-            "name": "Win-VS2022-Clang-Arm64-debug",
+            "name": "Win-VS2022-Clang-Arm64-Debug",
             "displayName": "Clang with VS2022 - Arm64 - Debug",
             "configurePreset": "Win-VS2022-Clang-Arm64",
             "configuration": "Debug"
