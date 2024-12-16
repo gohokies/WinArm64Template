@@ -61,13 +61,13 @@
     ],
     "buildPresets": [
         {
-            "name": "Win-VS2022-MSVCX64-X64-Debug",
+            "name": "Win-VS2022-MSVC-X64-Debug",
             "displayName": "Build with VS2022 MSVC - X64 - Debug",
             "configurePreset": "Win-VS2022-MSVC-X64",
             "configuration": "Debug"
         },
         {
-            "name": "Win-VS2022-MSVCX64-X64-Release",
+            "name": "Win-VS2022-MSVC-X64-Release",
             "displayName": "Build with VS2022 MSVC - X64 - Release",
             "configurePreset": "Win-VS2022-MSVC-X64",
             "configuration": "Release"
